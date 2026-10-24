@@ -4,26 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Karya Muktaf | Wedding & Cafe Videography in Malaysia</title>
-<meta name="description" content="Karya Muktaf makes wedding films and cafe promo videos in Malaysia. Packages from RM450. Message us on WhatsApp to book.">
+<meta name="description" content="Cinematic wedding films and cafe videos in Malaysia, shot with care and colour-graded by hand. Packages from RM450.">
+<meta property="og:image" content="images/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#F2F4F6; --card:#FFFFFF; --ink:#101B2D; --muted:#4F5B6B;
-  --line:#D5DAE0; --gold:#E3A02F; --gold-ink:#101B2D; --frame:#101B2D; --frame-text:#F2F4F6;
+  --line:#D5DAE0; --gold:#E3A02F; --gold-ink:#101B2D; --deep:#101B2D; --deep-text:#F2F4F6;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#0C1422; --card:#142036; --ink:#EEF1F5; --muted:#A3AEBD;
-    --line:#26354F; --gold:#EDB04A; --gold-ink:#101B2D; --frame:#050A14; --frame-text:#EEF1F5;
-  }
+  :root{--paper:#0C1422; --card:#142036; --ink:#EEF1F5; --muted:#A3AEBD;
+    --line:#26354F; --gold:#EDB04A; --deep:#050A14; --deep-text:#EEF1F5}
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 1.05rem/1.6 "DM Sans",system-ui,sans-serif}
+body{background:var(--paper);color:var(--ink);font:400 1.05rem/1.65 "DM Sans",system-ui,sans-serif}
 h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.08}
 a{color:inherit}
+img{display:block;max-width:100%}
 .wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
 section{padding:4.5rem 0}
 h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
@@ -33,143 +33,175 @@ h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
 .btn:hover{filter:brightness(1.06)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-header{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0}
-.logo{font-family:"Instrument Serif",Georgia,serif;font-size:1.5rem;text-decoration:none}
-nav a{margin-left:1.2rem;text-decoration:none;color:var(--muted);font-size:.95rem}
-nav a:hover{color:var(--ink)}
-@media(max-width:600px){nav a.hide{display:none}}
 
-/* hero: a letterboxed film frame */
-.hero{padding:2rem 0 4rem}
-.hero h1{font-size:clamp(2.8rem,9vw,5.8rem);max-width:13ch;margin:1.2rem 0}
-.hero p{font-size:1.15rem;color:var(--muted);max-width:46ch;margin-bottom:1.6rem}
+/* hero: full-bleed photo */
+.hero{position:relative;min-height:92vh;color:#fff;display:flex;flex-direction:column;overflow:hidden;background:#0a0a0a}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 55%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,14,.82) 0%,rgba(5,8,14,.45) 55%,rgba(5,8,14,.15) 100%)}
+.hero>*{position:relative;z-index:1}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 1.25rem;max-width:1040px;width:100%;margin:0 auto}
+.logo{font-family:"Instrument Serif",Georgia,serif;font-size:1.6rem;text-decoration:none;color:#fff}
+nav a{margin-left:1.3rem;text-decoration:none;color:rgba(255,255,255,.85);font-size:.95rem}
+nav a:hover{color:#fff}
+@media(max-width:640px){nav a.hide{display:none}}
+.hero-body{margin:auto 0;padding-bottom:3rem}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);max-width:12ch;margin-bottom:1rem}
+.hero p{font-size:1.15rem;max-width:42ch;color:rgba(255,255,255,.88);margin-bottom:1.6rem}
 .actions{display:flex;gap:.8rem;flex-wrap:wrap}
-.frame{margin-top:3rem;background:var(--frame);color:var(--frame-text);border-radius:10px;
-  aspect-ratio:2.39/1;display:grid;place-items:center;text-align:center;padding:1rem;position:relative;overflow:hidden}
-.frame span{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(1.1rem,3.4vw,1.9rem);opacity:.9}
-.frame small{display:block;font-size:.85rem;opacity:.6;margin-top:.3rem;font-family:"DM Sans",sans-serif}
-.frame::before,.frame::after{content:"";position:absolute;top:0;bottom:0;width:10px;
-  background:repeating-linear-gradient(var(--paper) 0 14px,transparent 14px 30px)}
-.frame::before{left:0;opacity:.18}.frame::after{right:0;opacity:.18}
+.hero .btn.ghost{color:#fff;border-color:#fff}
 
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
+@media(max-width:820px){.about{grid-template-columns:1fr;gap:1.2rem}}
+.about p{color:var(--muted);margin-bottom:1rem;max-width:58ch}
+.about p:first-of-type{color:var(--ink);font-size:1.2rem}
+.skills{display:grid;gap:.6rem;margin-top:1.4rem;padding:0;list-style:none}
+.skills li{padding:.8rem 0;border-top:1px solid var(--line)}
+.skills strong{display:block}
+.skills span{color:var(--muted);font-size:.95rem}
 
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
-.hero-grid .reel{display:flex;justify-content:center}
-.hero-grid .reel blockquote{margin:0}
-@media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+/* films */
+.films{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-top:2rem}
+@media(max-width:820px){.films{grid-template-columns:1fr}}
+.films .reel{display:flex;justify-content:center}
+.films blockquote{margin:0}
+.tile{border:1.5px dashed var(--line);border-radius:12px;padding:1.4rem;color:var(--muted);margin-top:1rem}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.gallery figure{margin:0;aspect-ratio:4/5}
+.gallery figure:first-child{grid-column:span 2;aspect-ratio:16/8}
+.gallery figure:first-child img{object-position:50% 70%}
+@media(max-width:560px){.gallery figure:first-child{aspect-ratio:4/3}}
 
-/* services */
+/* packages */
+.price{margin-top:1.5rem;display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.price strong{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.4rem,7vw,4rem)}
+.note{color:var(--muted);font-size:.95rem;margin-top:.5rem;max-width:56ch}
 .two{display:grid;gap:1.25rem;grid-template-columns:1fr 1fr;margin-top:2rem}
 @media(max-width:760px){.two{grid-template-columns:1fr}}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.8rem}
 .panel h3{font-size:1.9rem;margin-bottom:.5rem}
 .panel ul{margin:1rem 0 0;padding-left:1.1rem;color:var(--muted)}
-.price{margin-top:2.2rem;display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
-.price strong{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.4rem,7vw,4rem)}
-.note{color:var(--muted);font-size:.95rem;margin-top:.5rem;max-width:56ch}
 
-/* portfolio */
-.grid{display:grid;gap:1rem;grid-template-columns:repeat(3,1fr);margin-top:2rem}
-@media(max-width:760px){.grid{grid-template-columns:1fr}}
-.tile{aspect-ratio:9/12;border:1.5px dashed var(--line);border-radius:12px;display:grid;place-items:center;
-  text-align:center;padding:1rem;color:var(--muted);font-size:.95rem}
-
-/* process: a real sequence */
+/* process */
 ol{list-style:none;padding:0;margin-top:2rem;display:grid;gap:1.2rem;max-width:640px}
 ol li{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;align-items:start;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
 ol b{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:2.2rem;line-height:1;color:var(--gold)}
 ol strong{display:block;margin-bottom:.15rem}
 ol span{color:var(--muted)}
 
-/* contact */
-.contact{background:var(--frame);color:var(--frame-text);border-radius:18px;padding:clamp(2rem,6vw,4rem);text-align:center}
+/* inquire */
+.contact{background:var(--deep);color:var(--deep-text);border-radius:18px;padding:clamp(2rem,6vw,4rem);text-align:center}
 .contact h2{max-width:16ch;margin:0 auto 1rem}
 .contact p{opacity:.8;margin:0 auto 1.6rem;max-width:44ch}
 footer{padding:2.5rem 0 3rem;color:var(--muted);font-size:.9rem;text-align:center}
+footer a{margin:0 .5rem}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="wrap">
+
+<div class="hero">
+  <img src="images/hero.jpg" alt="Two painted teapots on a wooden counter, lit by warm cafe light" fetchpriority="high">
   <header>
     <a class="logo" href="#top">Karya Muktaf</a>
     <nav>
-      <a href="#services" class="hide">Services</a>
-      <a href="#work" class="hide">Our work</a>
-      <a href="#how">How it works</a>
-      <a href="#book">Book</a>
+      <a href="#about" class="hide">About</a>
+      <a href="#films" class="hide">Films</a>
+      <a href="#packages" class="hide">Packages</a>
+      <a href="#book">Inquire</a>
     </nav>
   </header>
+  <div class="wrap hero-body" id="top">
+    <h1>Every frame composed. Every colour graded.</h1>
+    <p>Wedding films and cafe videos made in Malaysia, with a cinematic eye. Packages from RM450.</p>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/601164649300?text=Hi%20Karya%20Muktaf%2C%20I%27d%20like%20to%20ask%20about%20a%20video." target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <a class="btn ghost" href="#films">Watch our films</a>
+    </div>
+  </div>
+</div>
 
-  <main id="top">
-    <div class="hero">
-     <div class="hero-grid">
-      <div class="hero-text">
-      <h1>We film the day, so you can live it.</h1>
-      <p>Wedding films and cafe videos, made in Malaysia. Friendly to work with, easy to book, and priced from RM450.</p>
-      <div class="actions">
-        <a class="btn" href="https://wa.me/601164649300?text=Hi%20Karya%20Muktaf%2C%20I%27d%20like%20to%20ask%20about%20a%20video." target="_blank" rel="noopener">Message us on WhatsApp</a>
-        <a class="btn ghost" href="#services">See services</a>
+<main class="wrap">
+  <section id="about">
+    <div class="about">
+      <h2>It started as a hobby. Then it became the thing I love most.</h2>
+      <div>
+        <p>Somewhere between my first shoot and my hundredth edit, filming stopped being something I did for fun and became my passion. I love the whole process: finding the angle, framing the shot, then sitting down in the edit to shape it.</p>
+        <p>I think in cinematic composition, so every frame is placed on purpose. And I colour grade every video myself, because the right colour makes a scone look warm enough to taste and a wedding feel like a memory worth keeping.</p>
+        <p>My goal is simple: make videos people remember, and want to share.</p>
+        <ul class="skills">
+          <li><strong>Cinematic composition</strong><span>Framing and angles chosen to tell the story.</span></li>
+          <li><strong>Professional colour grading</strong><span>Colour that matches the mood of your day or your brand.</span></li>
+          <li><strong>Shot and edited by one person</strong><span>The same eye from the first frame to the final cut.</span></li>
+        </ul>
       </div>
-      </div>
+    </div>
+  </section>
+
+  <section id="films" style="padding-top:1rem">
+    <h2>Our films</h2>
+    <p class="lead">A look at what we make.</p>
+    <div class="films">
       <div class="reel">
         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mktfi/video/7695298810171362581" data-video-id="7695298810171362581" style="max-width:605px;min-width:325px;"><section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@mktfi/video/7695298810171362581">Watch this video on TikTok</a></section></blockquote>
         <script async src="https://www.tiktok.com/embed.js"></script>
       </div>
-     </div>
+      <div>
+        <p class="lead">Short, scroll-stopping videos for cafes, and long-lasting films for weddings. Follow along on TikTok to see our latest work.</p>
+        <!-- Add more TikTok embeds here, or a wedding clip -->
+        <div class="tile">Wedding film coming soon. Send us your best clip and it goes here.</div>
+        <p style="margin-top:1.5rem"><a class="btn ghost" href="https://www.tiktok.com/@mktfi" target="_blank" rel="noopener">More on TikTok @mktfi</a></p>
+      </div>
     </div>
+    <div class="gallery">
+      <figure><img src="images/cake.jpg" alt="Two cakes on white trays in a cafe display, with handwritten price cards" loading="lazy"></figure>
+      <figure><img src="images/scones.jpg" alt="A hand placing freshly baked scones on a gold board" loading="lazy"></figure>
+      <figure><img src="images/espresso.jpg" alt="A barista leveling coffee grounds in a portafilter" loading="lazy"></figure>
+    </div>
+  </section>
 
-    <section id="services">
-      <h2>Two things we do well</h2>
-      <p class="lead">Pick the one that fits, or message us if you are not sure. We will help you choose.</p>
-      <div class="two">
-        <div class="panel">
-          <h3>Wedding films</h3>
-          <p>A film you will want to rewatch every anniversary.</p>
-          <ul><li>Highlight film of the day</li><li>Full ceremony and reception coverage</li><li>Choose the hours that suit you</li></ul>
-        </div>
-        <div class="panel">
-          <h3>Cafe marketing</h3>
-          <p>Videos that make people want to visit your cafe.</p>
-          <ul><li>Reels and short promo videos</li><li>Menu, drinks, and atmosphere shots</li><li>One shoot, several videos</li></ul>
-        </div>
+  <section id="packages">
+    <h2>Packages</h2>
+    <p class="lead">Pick the one that fits, or message us if you are not sure. We will help you choose.</p>
+    <div class="two">
+      <div class="panel">
+        <h3>Wedding films</h3>
+        <p>A film you will want to rewatch every anniversary.</p>
+        <ul><li>Highlight film of the day</li><li>Full ceremony and reception coverage</li><li>Choose the hours that suit you</li></ul>
       </div>
-      <div class="price"><span>Packages from</span><strong>RM450 to RM1,500</strong></div>
-      <p class="note">The price depends on the date, location, hours of coverage, and number of videos. Message us the details and we will send a clear quote.</p>
-    </section>
-
-    <section id="work">
-      <h2>Our work</h2>
-      <p class="lead">A few recent projects.</p>
-      <!-- Replace each tile with a video or image from your portfolio -->
-      <div class="grid">
-        <div class="tile">Add a wedding clip here</div>
-        <div class="tile">Add a cafe Reel here</div>
-        <div class="tile">Add a behind-the-scenes clip here</div>
+      <div class="panel">
+        <h3>Cafe marketing</h3>
+        <p>Videos that make people want to visit your cafe.</p>
+        <ul><li>Reels and short promo videos</li><li>Menu, drinks, and atmosphere shots</li><li>One shoot, several videos</li></ul>
       </div>
-      <p style="margin-top:1.5rem"><a class="btn ghost" href="https://www.tiktok.com/@mktfi" target="_blank" rel="noopener">More on TikTok @mktfi</a></p>
-    </section>
+    </div>
+    <div class="price"><span>Packages from</span><strong>RM450 to RM1,500</strong></div>
+    <p class="note">The price depends on the date, location, hours of coverage, and number of videos. Message us the details and we will send a clear quote.</p>
+  </section>
 
-    <section id="how">
-      <h2>How booking works</h2>
-      <ol>
-        <li><b>1</b><div><strong>Message us</strong><span>Tell us your date, location, and what you have in mind.</span></div></li>
-        <li><b>2</b><div><strong>Get a quote</strong><span>We reply with a clear price and confirm the date.</span></div></li>
-        <li><b>3</b><div><strong>We shoot and deliver</strong><span>You get your finished video, ready to share.</span></div></li>
-      </ol>
-    </section>
+  <section id="how" style="padding-top:1rem">
+    <h2>How booking works</h2>
+    <ol>
+      <li><b>1</b><div><strong>Message us</strong><span>Tell us your date, location, and what you have in mind.</span></div></li>
+      <li><b>2</b><div><strong>Get a quote</strong><span>We reply with a clear price and confirm the date.</span></div></li>
+      <li><b>3</b><div><strong>We shoot and deliver</strong><span>You get your finished, colour-graded video, ready to share.</span></div></li>
+    </ol>
+  </section>
 
-    <section id="book" style="padding-top:1rem">
-      <div class="contact">
-        <h2>Ready to book your date?</h2>
-        <p>Send us a quick message on WhatsApp. We usually reply the same day.</p>
-        <a class="btn" href="https://wa.me/601164649300?text=Hi%20Karya%20Muktaf%2C%20I%27d%20like%20to%20book%20a%20video." target="_blank" rel="noopener">Chat on WhatsApp</a>
-      </div>
-    </section>
-  </main>
+  <section id="book" style="padding-top:1rem">
+    <div class="contact">
+      <h2>Ready to book your date?</h2>
+      <p>Send us a quick message on WhatsApp. We usually reply the same day.</p>
+      <a class="btn" href="https://wa.me/601164649300?text=Hi%20Karya%20Muktaf%2C%20I%27d%20like%20to%20book%20a%20video." target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </section>
+</main>
 
-  <footer>© Karya Muktaf. Videography in Malaysia. WhatsApp +60 11-6464 9300</footer>
-</div>
+<footer>
+  <a href="https://www.tiktok.com/@mktfi" target="_blank" rel="noopener">TikTok @mktfi</a>
+  <a href="https://wa.me/601164649300" target="_blank" rel="noopener">WhatsApp +60 11-6464 9300</a>
+  <p style="margin-top:.8rem">© Karya Muktaf. Videography in Malaysia.</p>
+</footer>
 </body>
 </html>
-
